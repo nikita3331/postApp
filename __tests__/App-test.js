@@ -4,11 +4,16 @@
 
 import 'react-native';
 import React from 'react';
-import App from '../App';
+import App from '../src/App';
 
-// Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
+import {addNums} from '../src/func/dumies'
+jest.useFakeTimers();
+jest.mock('../src/actions/user')
 
 it('renders correctly', () => {
-  renderer.create(<App />);
+    renderer.create(<App />);
 });
+test('add numbers',()=>{
+  expect(addNums(1,2)).toEqual(3)
+})

@@ -1,3 +1,4 @@
+
 const main_url='https://jsonplaceholder.typicode.com'
 export const setPosts = (posts) => {
     return {

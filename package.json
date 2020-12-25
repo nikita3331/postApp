@@ -14,7 +14,10 @@
     "@react-navigation/bottom-tabs": "^5.11.0",
     "@react-navigation/native": "^5.8.8",
     "@react-navigation/stack": "^5.12.5",
+    "@types/jest": "^26.0.15",
+    "node-fetch": "^2.6.1",
     "react": "16.13.1",
+    "react-dom": "^17.0.1",
     "react-native": "0.63.3",
     "react-native-elements": "^3.0.0-alpha.1",
     "react-native-gesture-handler": "^1.8.0",
@@ -37,6 +40,12 @@
     "react-test-renderer": "16.13.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|@?react-navigation)"
+    ],
+    "setupFiles": [
+      "./node_modules/react-native-gesture-handler/jestSetup.js"
+    ]
   }
 }
